@@ -8,6 +8,7 @@ for (const d of data) {
   d.x ||= 0;
   d.y ||= 1;
   d.z ||= -1;
+  /*
   const html = `<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
 <title>${d.name}</title>
 <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
@@ -28,7 +29,7 @@ for (const d of data) {
   <a-entity light="type: ambient; color: #FFF"></a-entity>
     <!--<a-sphere id="sphere" color="#f22"></a-sphere>-->
   <a-entity id="cameraRig" position="0 1 0" rotation="0 0 0">
-    <a-entity id="head" camera position="0 1.7 0"mc-controls look-controls x-drone-controls-mode2></a-entity>
+    <a-entity id="head" camera position="0 1.7 0" mc-controls look-controls x-drone-controls-mode2></a-entity>
     <a-entity oculus-touch-controls="hand:left" teleport-controls="button:trigger; collisionEntities:.collidable; cameraRig:#cameraRig; teleportOrigin:#head;"></a-entity>
     <a-entity oculus-touch-controls="hand:right" teleport-controls="button:trigger; collisionEntities:.collidable; cameraRig:#cameraRig; teleportOrigin:#head;"></a-entity>
     <!--
@@ -40,6 +41,13 @@ for (const d of data) {
   
 </body>
 </html>`;
+*/
+  const html = `<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
+<script type="module">
+import * as eg from "https://js.sabae.cc/egvr.js";
+
+eg.model("./${d.file}.glb", ${d.x}, ${d.y}, ${d.z}, 0, ${d.scale});
+</script>`;
   await Deno.writeTextFile(`${d.file}.html`, html);
 }
 
