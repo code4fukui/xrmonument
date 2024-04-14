@@ -57,8 +57,8 @@ const htmlindex = `<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><m
 <style>
 .icon {
   float: left;
-  width: 4em;
-  margin: 0 .8em .3em .3em;
+  width: 8em;
+  margin: -1em .8em 1em .3em;
 }
 li {
   clear: both;
