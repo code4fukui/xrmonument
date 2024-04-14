@@ -53,13 +53,36 @@ eg.model("./${d.file}.glb", ${d.x}, ${d.y}, ${d.z}, 0, ${d.scale});
 
 const d = data[0];
 const htmlindex = `<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" href="data:">
-  <title>${d.category_ja} - ${d.category}</title>
-  <body>
+<title>${d.category_ja} - ${d.category}</title>
+<style>
+.icon {
+  float: left;
+  width: 4em;
+  margin: 0 .8em .3em .3em;
+}
+li {
+  clear: both;
+  margin: 0 0 .8em 0;
+  padding: 0;
+  list-style: none;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+hr {
+  clear: both;
+  margin-top: 2em;
+}
+</style>
+</head><body>
 <h1>${d.category_ja} - ${d.category}</h1>
 <ul>
-${data.map(i => `<li>${d.date} <a href="${i.file}.html">${i.name} APP</a> / <a href="${i.file}.usdz">USDZ</a> / <a href="${i.file}.glb">GLB</a> - <a href=${i.url}>${i.site}</a></li>`).join("\n")}
+${data.map(i => `<li><a rel=ar href="${i.file}.usdz"><img class=icon src=articon.webp></a>${d.date} <a href="${i.file}.html">${i.name} APP</a> / <a href="${i.file}.usdz">USDZ</a> / <a href="${i.file}.glb">GLB</a> - <a href=${i.url}>${i.site}</a></li>`).join("\n")}
 </ul>
 
 <hr>
-DATA: CC BY <a href=https://github.com/code4fukui/xrmonument>Code for FUKUI</a><br>`;
+DATA: CC BY <a href=https://github.com/code4fukui/xrmonument>Code for FUKUI</a><br>
+Icon: the <a href=articon.webp>articon</a> created by <a href=https://openai.com/gpt-4>GPT-4</a><br>
+`;
 await Deno.writeTextFile("index.html", htmlindex);
