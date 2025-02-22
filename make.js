@@ -78,7 +78,7 @@ hr {
 </head><body>
 <h1>${d.category_ja} - ${d.category}</h1>
 <ul>
-${data.map(i => `<li><a rel=ar href="${i.file}.usdz"><img class=icon src=articon.webp></a>${d.date} <a href="${i.file}.html">${i.name} APP</a> / <a href="${i.file}.usdz">USDZ</a> / <a href="${i.file}.glb">GLB</a> - <a href=${i.url}>${i.site}</a></li>`).join("\n")}
+${data.map(i => `<li><a rel=ar href="${i.file}.usdz"><img class=icon src=articon.webp></a>${i.date} <a href="${i.file}.html">${i.name} APP</a> / <a href="${i.file}.usdz">USDZ</a> / <a href="${i.file}.glb">GLB</a> - <a href=${i.url}>${i.site}</a></li>`).join("\n")}
 </ul>
 
 <hr>
